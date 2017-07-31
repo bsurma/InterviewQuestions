@@ -53,7 +53,7 @@ namespace InterviewQuestions.DataStructures
 
         public void Visit(Node node)
         {
-            Console.WriteLine("At node " + node.Name);
+            //Console.WriteLine("At node " + node.Name);
         }
     }
 }

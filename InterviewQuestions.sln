@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewQuestions", "InterviewQuestions\InterviewQuestions.csproj", "{17C1AFCF-1D14-4AF3-8B0D-6EC30FC471A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackingTheCodingInterview", "CrackingTheCodingInterview\CrackingTheCodingInterview.csproj", "{0D066BF2-C91A-4810-9504-E40EED822A9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewQuestionsInterfaces", "InterviewQuestionsInterfaces\InterviewQuestionsInterfaces.csproj", "{FB68BE5D-B6B6-4B2E-92AC-FBE83316974F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "LeetCode\LeetCode.csproj", "{D2A444DC-9D08-47DA-909C-9AE77E3458E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{17C1AFCF-1D14-4AF3-8B0D-6EC30FC471A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C1AFCF-1D14-4AF3-8B0D-6EC30FC471A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17C1AFCF-1D14-4AF3-8B0D-6EC30FC471A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D066BF2-C91A-4810-9504-E40EED822A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D066BF2-C91A-4810-9504-E40EED822A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D066BF2-C91A-4810-9504-E40EED822A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D066BF2-C91A-4810-9504-E40EED822A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB68BE5D-B6B6-4B2E-92AC-FBE83316974F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB68BE5D-B6B6-4B2E-92AC-FBE83316974F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB68BE5D-B6B6-4B2E-92AC-FBE83316974F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB68BE5D-B6B6-4B2E-92AC-FBE83316974F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A444DC-9D08-47DA-909C-9AE77E3458E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A444DC-9D08-47DA-909C-9AE77E3458E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A444DC-9D08-47DA-909C-9AE77E3458E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A444DC-9D08-47DA-909C-9AE77E3458E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterviewQuestions
+namespace InterviewQuestions.Interface
 {
-    abstract class Question : IQuestion
+    public abstract class Question : IQuestion
     {
         protected Type[] inputTypes;
 
@@ -29,14 +29,14 @@ namespace InterviewQuestions
         public abstract object RunTest(params object[] inputs);
     }
 
-    interface IQuestion
+    public interface IQuestion
     {
         object Test(object[] inputs);
 
         List<TestData> TestCases { get; }
     }
 
-    internal class TestData
+    public class TestData
     {
         public object[] InputData { get; set; }
         public object ExpectedResult { get; set; }

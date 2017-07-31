@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using InterviewQuestions.Interface;
+using System.IO;
 
 namespace InterviewQuestions
 {
@@ -11,30 +13,40 @@ namespace InterviewQuestions
     {
         static void Main(string[] args)
         {
-            var questions = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.GetInterface("IQuestion") != null);
+            List<Assembly> assemblies = new List<Assembly>();
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            foreach (var question in questions)
+            foreach (string dll in Directory.GetFiles(path, "*.dll"))
+                assemblies.Add(Assembly.LoadFile(dll));
+
+            foreach (Assembly assembly in assemblies)
             {
-                if (question.IsAbstract)
-                    continue;
+                //Get all questions by finding types which implement IQuestion
+                var questions = assembly.GetTypes().Where(t => t.GetInterface("IQuestion") != null);
 
-                var q = Activator.CreateInstance(question) as IQuestion;
-                Console.WriteLine("Execution question: " + question.Name + ", containing " + q.TestCases.Count.ToString() + " test cases.");
-
-                bool success = true;
-                foreach (var test in q.TestCases)
+                foreach (var question in questions)
                 {
-                    var result = q.Test(test.InputData);
+                    if (question.IsAbstract)
+                        continue;
 
-                    if (!result.Equals(test.ExpectedResult))
+                    var q = Activator.CreateInstance(question) as IQuestion;
+                    Console.WriteLine("Execution question: " + question.Name + ", containing " + q.TestCases.Count.ToString() + " test cases.");
+
+                    bool success = true;
+                    foreach (var test in q.TestCases)
                     {
-                        success = false;
-                        Console.WriteLine(" - Error: " + result.ToString() + " does not match " + test.ExpectedResult.ToString());
+                        var result = q.Test(test.InputData);
+
+                        if (!result.Equals(test.ExpectedResult))
+                        {
+                            success = false;
+                            Console.WriteLine(" - Error: " + result.ToString() + " does not match " + test.ExpectedResult.ToString());
+                        }
                     }
-                }
-                if (success)
-                {
-                    Console.WriteLine("### Success!");
+                    if (success)
+                    {
+                        Console.WriteLine("### Success!");
+                    }
                 }
             }
 
